@@ -1,0 +1,20 @@
+meta {
+  name: v3-masterChainInfo
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://toncenter.com/api/v3/masterchainInfo
+  body: none
+  auth: inherit
+}
+
+headers {
+  Accept: application/json
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
