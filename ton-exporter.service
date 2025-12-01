@@ -3,12 +3,11 @@ Description=TON Prometheus Exporter
 After=network.target
 
 [Service]
-User=ton_user
-Group=ton_user
+User=ton_exporter
+Group=ton_exporter
+DynamicUser=true
 
-WorkingDirectory=/opt/ton-exporter
-
-ExecStart=/opt/ton-exporter/ton-exporter --port=4000 --api=v2 --rpc=<>
+ExecStart=/usr/local/bin/ton-exporter --port=4000 --api=v3 --rpc=http://127.0.0.1:8081/masterchainInfo
 
 Restart=always
 RestartSec=5
